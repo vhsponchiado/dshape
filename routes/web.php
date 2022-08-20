@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\MeasurementsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Página inicial
 Route::get('/', function () {
-    return view('welcome');
+    return view('measurements/home');
 });
+
+// Rota que abre a lista de medidas cadastradas
+Route::get('/measurements', [MeasurementsController::class,'index']);
+
+// Rota que abre o formulário para cadastrar nova medida
+Route::get('/measurements/new', function () {
+    return view('measurements/form');
+});
+
+// Rota que salva no banco de dados uma nova medida
+Route::post('/measurements/new',[MeasurementsController::class,'store']);
+
+//Rota que exclui uma medida do banco de dados
+Route::delete('/measurements/{id}',[MeasurementsController::class,'destroy']);
+
