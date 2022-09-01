@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\MeasurementsController;
+use App\Models\Measurements;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,3 +33,8 @@ Route::post('/measurements/new',[MeasurementsController::class,'store']);
 //Rota que exclui uma medida do banco de dados
 Route::delete('/measurements/{id}',[MeasurementsController::class,'destroy']);
 
+//Rota que altera uma medida do banco de dados
+Route::put('/measurements/{id}',[MeasurementsController::class,'update']);
+
+// Rota que retorna uma medida específica do banco de dados
+Route::get('/measurements/{id}',[MeasurementsController::class,'show']);
