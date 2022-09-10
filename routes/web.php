@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 // Página inicial
 Route::get('/', function () {
-    return view('measurements/home');
+    return view('layouts/landing');
 });
 
 // Rota que abre a lista de medidas cadastradas
