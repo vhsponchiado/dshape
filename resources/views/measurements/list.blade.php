@@ -4,11 +4,11 @@
   <div class="container">
     <div class="row">
       <div class="col-12 my-3">
-        <a href="/">Voltar</a>
+        <a href="/home">Voltar</a>
       </div>
       <div class="col-12">
         <div class="card">
-          <div class="card-header bg-info text-white text-center">
+          <div class="card-header bg-warning text-white text-center">
             <h2>Medidas Cadastradas</h2>
           </div>
           <div class="card-body">
@@ -87,6 +87,8 @@
       });
 
     </script>
+
+    
     @endsection
 
   

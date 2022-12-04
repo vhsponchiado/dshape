@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Measurements;
+use Illuminate\Support\Facades\Auth;
+
 
 class MeasurementsController extends Controller
 {
 
   public function index(){
-    $measurements = Measurements::all();
+    $measurements = Measurements::where('user_id',Auth::user()->id)->get();
     return view('measurements/list', ['measurements' => $measurements]);
   }
 
@@ -31,6 +33,7 @@ class MeasurementsController extends Controller
     $measurements->right_thigh = $request->right_thigh;
     $measurements->left_calf   = $request->left_calf;
     $measurements->right_calf  = $request->right_calf;
+    $measurements-> user_id = Auth::user()->id;
 
     //salvando no banco de dados
     $measurements->save();

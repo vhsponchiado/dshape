@@ -1,10 +1,10 @@
 @extends('./layouts/main')
 
 <header>
-<a href="#" class="logo">DS<span>hape</span></a>
+<a href="/" class="logo">DS<span>hape</span></a>
 <ul class="navigation">
-    <li><a href="#">Login</a></li>
-    <li><a href="">Register</a></li>
+    <li><a href="/login">Login</a></li>
+    <li><a href="/register">Register</a></li>
 </ul>
 </header>
 
@@ -13,7 +13,7 @@
     <div class="textBox">
         <h2>Construa um melhor físico</h2>
         <p>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum </p>
-        <button type="button" class="btn btn-warning">Comece agora!</button>
+       <a href="./register"> <button type="button" class="btn btn-warning">Comece agora!</button></a>
     </div>
     <div class="imageBox">
         <img src="{{asset('assets/bir.png')}}" />
@@ -110,7 +110,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        opacity: 0.15;
+        opacity: 0.10;
         pointer-events: none;
     }
 
